@@ -15,14 +15,16 @@ const NavBar = () => {
     ];
 
     return (
-        <nav>
+        <nav className="p-6">
             <div className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
                 {
                     open === true ? <IoCloseSharp></IoCloseSharp>  : <IoMdMenu className=" "></IoMdMenu>
                 }
                 
             </div>
-            <ul className="md:flex">
+            <ul className={`md:flex duration-1000 absolute md:static bg-gray-400 text-white rounded-xl
+            ${open ? 'left-16 top-16' : '-left-60 top-16'}
+            p-6`}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
